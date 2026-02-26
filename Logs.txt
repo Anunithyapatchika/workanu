@@ -1,0 +1,363 @@
+Q)Architecture and workflow of pt3231
+
+2026-02-25T16:30:37.9724931Z 11:30:37.972 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === STARTING OPENAI API CALL ===
+
+2026-02-25T16:30:37.9726727Z 11:30:37.972 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Type: knowledge, Total messages in conversation: 1
+
+2026-02-25T16:30:37.9733418Z 11:30:37.972 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - --- Conversation Context ---
+
+2026-02-25T16:30:37.9733579Z 11:30:37.972 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[0] - Role: user, Content preview: Give us Architecture and Workflow for PT3231...
+
+2026-02-25T16:30:37.9733642Z 11:30:37.973 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - --- End Context Log ---
+
+2026-02-25T16:30:37.9734086Z 11:30:37.973 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Creating KNOWLEDGE request with full conversation context
+
+2026-02-25T16:30:37.9735355Z 11:30:37.973 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === Building Request Body ===
+
+2026-02-25T16:30:37.9737638Z 11:30:37.973 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Config - Index: multimodal-rag-1757504685106-knowledge, TopN: 25, Temp: 0.15, Strictness: 1, InScope: false
+
+2026-02-25T16:30:37.9792575Z 11:30:37.979 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Added 1 conversation messages to request
+
+2026-02-25T16:30:37.9797215Z 11:30:37.979 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Total messages in request: 2 (1 system + 1 conversation)
+
+2026-02-25T16:30:37.9802137Z 11:30:37.980 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.s.impl.OpenAIServiceImpl - Message sequence: system -> user
+
+2026-02-25T16:30:37.9805466Z 11:30:37.980 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === Request Body Built Successfully ===
+
+2026-02-25T16:30:37.9807622Z 11:30:37.980 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Request prepared with 2 total messages (including system prompt)
+
+2026-02-25T16:30:37.9808716Z 11:30:37.980 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Search configuration - Index: multimodal-rag-1757504685106-knowledge, TopN: 25, Strictness: 1, InScope: false, Temp: 0.15
+
+2026-02-25T16:30:37.9810689Z 11:30:37.980 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Sending request to OpenAI endpoint: https://openai-ecedel-aipoc.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-12-01-preview
+
+2026-02-25T16:30:49.4863101Z 11:30:49.486 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Successfully received response from OpenAI
+
+2026-02-25T16:30:49.5083232Z 11:30:49.507 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - OpenAI response - Content length: 3382, Has context: true
+
+2026-02-25T16:30:49.5118345Z 11:30:49.511 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.s.impl.OpenAIServiceImpl - Found image keyword 'architecture' in user message
+
+2026-02-25T16:30:49.5128839Z 11:30:49.512 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Image-related content detected based on conversation context
+
+2026-02-25T16:30:49.5131746Z 11:30:49.513 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Extracted filepath from citation: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUJTIwMzc5Ml9CUkRfVjIuZG9jeA2
+
+2026-02-25T16:30:49.5528628Z 11:30:49.552 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - Get images from blob folder: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUJTIwMzc5Ml9CUkRfVjIuZG9jeA2
+
+2026-02-25T16:30:49.7403143Z 11:30:49.739 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - blobName: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUJTIwMzc5Ml9CUkRfVjIuZG9jeA2/normalized_images_0.jpg
+
+2026-02-25T16:30:49.8353127Z 11:30:49.834 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - Downloaded image from blob: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUJTIwMzc5Ml9CUkRfVjIuZG9jeA2/normalized_images_0.jpg
+
+2026-02-25T16:30:49.8355264Z 11:30:49.835 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - SuccessFully downloaded image :[[B@7f074ccf]
+
+2026-02-25T16:30:49.8356885Z 11:30:49.835 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Retrieved 1 images from path: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUJTIwMzc5Ml9CUkRfVjIuZG9jeA2
+
+2026-02-25T16:30:49.8367518Z 11:30:49.835 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === COMPLETED OPENAI API CALL ===
+
+2026-02-25T16:30:49.8367674Z 11:30:49.836 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã¢Å“â€¦ OpenAI service call SUCCESSFUL
+
+2026-02-25T16:30:49.8367770Z 11:30:49.836 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3231 (total tracked: 1)
+
+2026-02-25T16:30:49.8367856Z 11:30:49.836 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3231 (total tracked: 1)
+
+2026-02-25T16:30:49.8380699Z 11:30:49.836 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3231 (total tracked: 1)
+
+2026-02-25T16:30:49.8380850Z 11:30:49.837 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3231 (total tracked: 1)
+
+2026-02-25T16:30:49.8380929Z 11:30:49.837 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3231 (total tracked: 1)
+
+2026-02-25T16:30:49.8384379Z 11:30:49.838 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3231 (total tracked: 1)
+
+2026-02-25T16:30:49.8396637Z 11:30:49.838 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€™Â¾ Stored assistant response. Session now has 2 messages
+
+2026-02-25T16:30:49.8396805Z 11:30:49.839 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€™Â¾ Session now tracking printrails: [PT3231]
+
+2026-02-25T16:30:49.8397906Z 11:30:49.839 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Stored global conversation with printrails: [PT3231]
+
+2026-02-25T16:30:49.8402308Z 11:30:49.840 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - ==========================================================
+
+ 
+
+ 
+
+ 
+
+Q)can you give me the list of all trails which have.txt files?
+
+822471Z 11:31:52.380 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - ==========================================================
+
+2026-02-25T16:31:52.3823306Z 11:31:52.381 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - === OpenAI Controller Request ===
+
+2026-02-25T16:31:52.3823382Z 11:31:52.381 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Query Type: knowledge
+
+2026-02-25T16:31:52.3830260Z 11:31:52.382 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Frontend sent 1 messages
+
+2026-02-25T16:31:52.3837693Z 11:31:52.383 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€â€ž Using EXISTING sessionId from cookie: 52a2548b-4786-4bf5-824d-b5a057453a80
+
+2026-02-25T16:31:52.3842872Z 11:31:52.384 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œÅ  Session 52a2548b-4786-4bf5-824d-b5a057453a80 statistics:
+
+2026-02-25T16:31:52.3846278Z 11:31:52.384 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController -    - Stored messages: 2
+
+2026-02-25T16:31:52.3851803Z 11:31:52.385 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController -    - Tracked printrails: [PT3231]
+
+2026-02-25T16:31:52.3855535Z 11:31:52.385 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController -    - Most recent printrail: PT3231
+
+2026-02-25T16:31:52.3858403Z 11:31:52.385 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController -    - Frontend message[0] (user): can you give me the list of all trails which have.txt files?...
+
+2026-02-25T16:31:52.3862183Z 11:31:52.386 [http-nio-8080-exec-10] WARN  c.u.c.e.r.c.OpenAIController - Ã¢Å¡Â Ã¯Â¸ï¿½ Frontend sent only 1 messages - using SERVER-SIDE history
+
+2026-02-25T16:31:52.3866396Z 11:31:52.386 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã¢Å¾â€¢ Added user message to session: can you give me the list of all trails which have.txt files?...
+
+2026-02-25T16:31:52.3869551Z 11:31:52.386 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ FINAL conversation size: 3 messages
+
+2026-02-25T16:31:52.3916039Z 11:31:52.387 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ Current printrails in session: [PT3231]
+
+2026-02-25T16:31:52.3916231Z 11:31:52.387 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ Message Sequence: user Ã¢â€ â€™ assistant Ã¢â€ â€™ user
+
+2026-02-25T16:31:52.3916306Z 11:31:52.387 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ Last user question: can you give me the list of all trails which have.txt files?
+
+2026-02-25T16:31:52.3916372Z 11:31:52.387 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸Å¡â‚¬ Calling OpenAI service with 3 messages...
+
+2026-02-25T16:31:52.3916456Z 11:31:52.388 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === STARTING OPENAI API CALL ===
+
+2026-02-25T16:31:52.3916647Z 11:31:52.388 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Type: knowledge, Total messages in conversation: 3
+
+2026-02-25T16:31:52.3916698Z 11:31:52.388 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - --- Conversation Context ---
+
+2026-02-25T16:31:52.3916758Z 11:31:52.388 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[0] - Role: user, Content preview: Give us Architecture and Workflow for PT3231...
+
+2026-02-25T16:31:52.3916810Z 11:31:52.388 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[1] - Role: assistant, Content preview: The architecture and workflow for PT3231 (EDELIVERY ENGINE) are as follows:
+
+2026-02-25T16:31:52.3916852Z
+
+2026-02-25T16:31:52.3916898Z Architecture Overview:
+
+2026-02-25T16:31:52.3916954Z PT3231 is built on an event-driven microservices a...
+
+2026-02-25T16:31:52.3917005Z 11:31:52.389 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[2] - Role: user, Content preview: can you give me the list of all trails which have.txt files?...
+
+2026-02-25T16:31:52.3927433Z 11:31:52.392 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - --- End Context Log ---
+
+2026-02-25T16:31:52.3930521Z 11:31:52.392 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Creating KNOWLEDGE request with full conversation context
+
+2026-02-25T16:31:52.3952690Z 11:31:52.393 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === Building Request Body ===
+
+2026-02-25T16:31:52.3956974Z 11:31:52.395 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Config - Index: multimodal-rag-1757504685106-knowledge, TopN: 25, Temp: 0.15, Strictness: 1, InScope: false
+
+2026-02-25T16:31:52.3960081Z 11:31:52.395 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Added 3 conversation messages to request
+
+2026-02-25T16:31:52.3963258Z 11:31:52.396 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Total messages in request: 4 (1 system + 3 conversation)
+
+2026-02-25T16:31:52.3966551Z 11:31:52.396 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.s.impl.OpenAIServiceImpl - Message sequence: system -> user -> assistant -> user
+
+2026-02-25T16:31:52.3980541Z 11:31:52.396 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === Request Body Built Successfully ===
+
+2026-02-25T16:31:52.3980978Z 11:31:52.396 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Request prepared with 4 total messages (including system prompt)
+
+2026-02-25T16:31:52.3981052Z 11:31:52.397 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Search configuration - Index: multimodal-rag-1757504685106-knowledge, TopN: 25, Strictness: 1, InScope: false, Temp: 0.15
+
+2026-02-25T16:31:52.3981115Z 11:31:52.397 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Sending request to OpenAI endpoint: https://openai-ecedel-aipoc.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-12-01-preview
+
+2026-02-25T16:32:05.7973884Z 11:32:05.796 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Successfully received response from OpenAI
+
+2026-02-25T16:32:05.8085686Z 11:32:05.808 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - OpenAI response - Content length: 1030, Has context: true
+
+2026-02-25T16:32:05.8095610Z 11:32:05.809 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.s.impl.OpenAIServiceImpl - Found image keyword 'architecture' in user message
+
+2026-02-25T16:32:05.8102752Z 11:32:05.810 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Image-related content detected based on conversation context
+
+2026-02-25T16:32:05.8109187Z 11:32:05.810 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Extracted filepath from citation: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUMzQxNl9CUkRfVjEuZG9jeA2
+
+2026-02-25T16:32:05.8538869Z 11:32:05.853 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - Get images from blob folder: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUMzQxNl9CUkRfVjEuZG9jeA2
+
+2026-02-25T16:32:05.8962862Z 11:32:05.896 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - blobName: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUMzQxNl9CUkRfVjEuZG9jeA2/normalized_images_0.jpg
+
+2026-02-25T16:32:05.9960545Z 11:32:05.994 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - Downloaded image from blob: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUMzQxNl9CUkRfVjEuZG9jeA2/normalized_images_0.jpg
+
+2026-02-25T16:32:05.9961258Z 11:32:05.994 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - blobName: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUMzQxNl9CUkRfVjEuZG9jeA2/normalized_images_1.jpg
+
+2026-02-25T16:32:06.0405208Z 11:32:06.040 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - Downloaded image from blob: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUMzQxNl9CUkRfVjEuZG9jeA2/normalized_images_1.jpg
+
+2026-02-25T16:32:06.0406382Z 11:32:06.040 [http-nio-8080-exec-10] INFO  c.u.c.e.r.util.BlobUtils - SuccessFully downloaded image :[[B@30655f07, [B@5eb60936]
+
+2026-02-25T16:32:06.0407026Z 11:32:06.040 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Retrieved 2 images from path: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2Mva25vd2xlZGdlL1BUMzQxNl9CUkRfVjEuZG9jeA2
+
+2026-02-25T16:32:06.0409986Z 11:32:06.040 [http-nio-8080-exec-10] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === COMPLETED OPENAI API CALL ===
+
+2026-02-25T16:32:06.0410130Z 11:32:06.040 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã¢Å“â€¦ OpenAI service call SUCCESSFUL
+
+2026-02-25T16:32:06.0420440Z 11:32:06.041 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3625 (total tracked: 2)
+
+2026-02-25T16:32:06.0420624Z 11:32:06.041 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3609 (total tracked: 3)
+
+2026-02-25T16:32:06.0420698Z 11:32:06.041 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3640 (total tracked: 4)
+
+2026-02-25T16:32:06.0420755Z 11:32:06.041 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3205 (total tracked: 5)
+
+2026-02-25T16:32:06.0430834Z 11:32:06.042 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3612 (total tracked: 6)
+
+2026-02-25T16:32:06.0436246Z 11:32:06.042 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3612 (total tracked: 6)
+
+2026-02-25T16:32:06.0436408Z 11:32:06.042 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3599 (total tracked: 7)
+
+2026-02-25T16:32:06.0436471Z 11:32:06.043 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT1943 (total tracked: 8)
+
+2026-02-25T16:32:06.0436528Z 11:32:06.043 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3819 (total tracked: 9)
+
+2026-02-25T16:32:06.0436613Z 11:32:06.043 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3231 (total tracked: 9)
+
+2026-02-25T16:32:06.0436670Z 11:32:06.043 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3752 (total tracked: 10)
+
+2026-02-25T16:32:06.0440506Z 11:32:06.043 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€™Â¾ Stored assistant response. Session now has 4 messages
+
+2026-02-25T16:32:06.0440694Z 11:32:06.043 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€™Â¾ Session now tracking printrails: [PT3752, PT3231, PT3819, PT1943, PT3599, PT3612, PT3205, PT3640, PT3609, PT3625]
+
+2026-02-25T16:32:06.0442793Z 11:32:06.044 [http-nio-8080-exec-10] DEBUG c.u.c.e.r.c.OpenAIController - Stored global conversation with printrails: [PT3752, PT3231, PT3819, PT1943, PT3599, PT3612, PT3205, PT3640, PT3609, PT3625]
+
+2026-02-25T16:32:06.0457513Z 11:32:06.044 [http-nio-8080-exec-10] INFO  c.u.c.e.r.c.OpenAIController - ==========================================================
+
+ 
+
+Q)Monitoring
+
+Nice! Let me check what’s under Monitoring.
+
+ 
+
+HealthStatement
+
+Nice! Let me check what’s under HealthStatement.
+
+ 
+
+PT3696 UNET
+
+Nice! Let me check what’s under PT3696 UNET.
+
+ 
+
+Service wise status of latest job
+
+ 
+
+ 
+
+c.u.c.e.r.c.OpenAIController - ==========================================================
+
+2026-02-25T16:33:23.8329738Z 11:33:23.832 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - === OpenAI Controller Request ===
+
+2026-02-25T16:33:23.8338295Z 11:33:23.833 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Query Type: monitoring
+
+2026-02-25T16:33:23.8345659Z 11:33:23.834 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Frontend sent 1 messages
+
+2026-02-25T16:33:23.8353739Z 11:33:23.834 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€â€ž Using EXISTING sessionId from cookie: 52a2548b-4786-4bf5-824d-b5a057453a80
+
+2026-02-25T16:33:23.8378059Z 11:33:23.836 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œÅ  Session 52a2548b-4786-4bf5-824d-b5a057453a80 statistics:
+
+2026-02-25T16:33:23.8378220Z 11:33:23.836 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController -    - Stored messages: 4
+
+2026-02-25T16:33:23.8378307Z 11:33:23.836 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController -    - Tracked printrails: [PT3752, PT3231, PT3819, PT1943, PT3599, PT3612, PT3205, PT3640, PT3609, PT3625]
+
+2026-02-25T16:33:23.8378363Z 11:33:23.836 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController -    - Most recent printrail: PT3752
+
+2026-02-25T16:33:23.8378418Z 11:33:23.836 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController -    - Frontend message[0] (user): Give us Service wise status of latest job for HealthStatement PT3696 UNET...
+
+2026-02-25T16:33:23.8378488Z 11:33:23.836 [http-nio-8080-exec-5] WARN  c.u.c.e.r.c.OpenAIController - Ã¢Å¡Â Ã¯Â¸ï¿½ Frontend sent only 1 messages - using SERVER-SIDE history
+
+2026-02-25T16:33:23.8378550Z 11:33:23.837 [http-nio-8080-exec-5] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3696 (total tracked: 11)
+
+2026-02-25T16:33:23.8378608Z 11:33:23.837 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã¢Å¾â€¢ Added user message to session: Give us Service wise status of latest job for HealthStatement PT3696 UNET...
+
+2026-02-25T16:33:23.8378669Z 11:33:23.837 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ FINAL conversation size: 5 messages
+
+2026-02-25T16:33:23.8389862Z 11:33:23.838 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ Current printrails in session: [PT3696, PT3752, PT3231, PT3819, PT1943, PT3599, PT3612, PT3205, PT3640, PT3609, PT3625]
+
+2026-02-25T16:33:23.8398008Z 11:33:23.839 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ Message Sequence: user Ã¢â€ â€™ assistant Ã¢â€ â€™ user Ã¢â€ â€™ assistant Ã¢â€ â€™ user
+
+2026-02-25T16:33:23.8405672Z 11:33:23.840 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€œï¿½ Last user question: Give us Service wise status of latest job for HealthStatement PT3696 UNET
+
+2026-02-25T16:33:23.8422493Z 11:33:23.842 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸Å¡â‚¬ Calling OpenAI service with 5 messages...
+
+2026-02-25T16:33:23.8429844Z 11:33:23.842 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === STARTING OPENAI API CALL ===
+
+2026-02-25T16:33:23.8436114Z 11:33:23.843 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Type: monitoring, Total messages in conversation: 5
+
+2026-02-25T16:33:23.8447501Z 11:33:23.844 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - --- Conversation Context ---
+
+2026-02-25T16:33:23.8480364Z 11:33:23.846 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[0] - Role: user, Content preview: Give us Architecture and Workflow for PT3231...
+
+2026-02-25T16:33:23.8484417Z 11:33:23.848 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[1] - Role: assistant, Content preview: The architecture and workflow for PT3231 (EDELIVERY ENGINE) are as follows:
+
+2026-02-25T16:33:23.8484719Z
+
+2026-02-25T16:33:23.8484783Z Architecture Overview:
+
+2026-02-25T16:33:23.8484837Z PT3231 is built on an event-driven microservices a...
+
+2026-02-25T16:33:23.8488323Z 11:33:23.848 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[2] - Role: user, Content preview: can you give me the list of all trails which have.txt files?...
+
+2026-02-25T16:33:23.8492347Z 11:33:23.849 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[3] - Role: assistant, Content preview: Trails using .txt files (including input, output, metadata, response, feedback, and any other usage):
+
+2026-02-25T16:33:23.8492626Z
+
+2026-02-25T16:33:23.8492683Z - PT3625 (input: tab-delimited .txt files from ...
+
+2026-02-25T16:33:23.8498214Z 11:33:23.849 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Message[4] - Role: user, Content preview: Give us Service wise status of latest job for HealthStatement PT3696 UNET...
+
+2026-02-25T16:33:23.8502219Z 11:33:23.850 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - --- End Context Log ---
+
+2026-02-25T16:33:23.8513920Z 11:33:23.851 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Creating MONITORING request with full conversation context
+
+2026-02-25T16:33:23.8516772Z 11:33:23.851 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === Building Request Body ===
+
+2026-02-25T16:33:23.8527478Z 11:33:23.852 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Config - Index: multimodal-rag-1757502603097-monitoring, TopN: 30, Temp: 0.1, Strictness: 1, InScope: false
+
+2026-02-25T16:33:23.8530547Z 11:33:23.852 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Added 5 conversation messages to request
+
+2026-02-25T16:33:23.8535153Z 11:33:23.853 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Total messages in request: 6 (1 system + 5 conversation)
+
+2026-02-25T16:33:23.8552053Z 11:33:23.855 [http-nio-8080-exec-5] DEBUG c.u.c.e.r.s.impl.OpenAIServiceImpl - Message sequence: system -> user -> assistant -> user -> assistant -> user
+
+2026-02-25T16:33:23.8556119Z 11:33:23.855 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === Request Body Built Successfully ===
+
+2026-02-25T16:33:23.8561764Z 11:33:23.855 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Request prepared with 6 total messages (including system prompt)
+
+2026-02-25T16:33:23.8570637Z 11:33:23.856 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Search configuration - Index: multimodal-rag-1757502603097-monitoring, TopN: 30, Strictness: 1, InScope: false, Temp: 0.1
+
+2026-02-25T16:33:23.8570939Z 11:33:23.856 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Sending request to OpenAI endpoint: https://openai-ecedel-aipoc.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-12-01-preview
+
+2026-02-25T16:33:34.9186856Z 11:33:34.918 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Successfully received response from OpenAI
+
+2026-02-25T16:33:34.9261027Z 11:33:34.923 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - OpenAI response - Content length: 2862, Has context: true
+
+2026-02-25T16:33:34.9261351Z 11:33:34.924 [http-nio-8080-exec-5] WARN  c.u.c.e.r.s.impl.OpenAIServiceImpl - WARNING: Response indicates no data found!
+
+2026-02-25T16:33:34.9261413Z 11:33:34.924 [http-nio-8080-exec-5] WARN  c.u.c.e.r.s.impl.OpenAIServiceImpl - This may indicate a search configuration issue.
+
+2026-02-25T16:33:34.9261506Z 11:33:34.924 [http-nio-8080-exec-5] WARN  c.u.c.e.r.s.impl.OpenAIServiceImpl - Conversation size: 5, Last message was: Give us Service wise status of latest job for HealthStatement PT3696 UNET
+
+2026-02-25T16:33:34.9265436Z 11:33:34.924 [http-nio-8080-exec-5] DEBUG c.u.c.e.r.s.impl.OpenAIServiceImpl - Found image keyword 'architecture' in user message
+
+2026-02-25T16:33:34.9265529Z 11:33:34.924 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Image-related content detected based on conversation context
+
+2026-02-25T16:33:34.9265610Z 11:33:34.924 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Extracted filepath from citation: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2MvbW9uaXRvcmluZy9EQzExMEVFMTlFMDg0QzM4QTczOEZBMjRDN0RFOTc0Nl9ldmVudC5sb2c1
+
+2026-02-25T16:33:34.9679776Z 11:33:34.967 [http-nio-8080-exec-5] INFO  c.u.c.e.r.util.BlobUtils - Get images from blob folder: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2MvbW9uaXRvcmluZy9EQzExMEVFMTlFMDg0QzM4QTczOEZBMjRDN0RFOTc0Nl9ldmVudC5sb2c1
+
+2026-02-25T16:33:35.0087841Z 11:33:35.008 [http-nio-8080-exec-5] INFO  c.u.c.e.r.util.BlobUtils - SuccessFully downloaded image :[]
+
+2026-02-25T16:33:35.0098124Z 11:33:35.009 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - Retrieved 0 images from path: aHR0cHM6Ly91Y3NodWI3NzgxNjg1NTQxLmJsb2IuY29yZS53aW5kb3dzLm5ldC9jb250YWluZXItYWlwb2MvbW9uaXRvcmluZy9EQzExMEVFMTlFMDg0QzM4QTczOEZBMjRDN0RFOTc0Nl9ldmVudC5sb2c1
+
+2026-02-25T16:33:35.0098286Z 11:33:35.009 [http-nio-8080-exec-5] INFO  c.u.c.e.r.s.impl.OpenAIServiceImpl - === COMPLETED OPENAI API CALL ===
+
+2026-02-25T16:33:35.0101491Z 11:33:35.009 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã¢Å“â€¦ OpenAI service call SUCCESSFUL
+
+2026-02-25T16:33:35.0106841Z 11:33:35.010 [http-nio-8080-exec-5] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3696 (total tracked: 11)
+
+2026-02-25T16:33:35.0109371Z 11:33:35.010 [http-nio-8080-exec-5] DEBUG c.u.c.e.r.c.OpenAIController - Tracked printrail: PT3696 (total tracked: 11)
+
+2026-02-25T16:33:35.0112484Z 11:33:35.010 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€™Â¾ Stored assistant response. Session now has 6 messages
+
+2026-02-25T16:33:35.0116130Z 11:33:35.011 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - Ã°Å¸â€™Â¾ Session now tracking printrails: [PT3696, PT3752, PT3231, PT3819, PT1943, PT3599, PT3612, PT3205, PT3640, PT3609, PT3625]
+
+2026-02-25T16:33:35.0116452Z 11:33:35.011 [http-nio-8080-exec-5] DEBUG c.u.c.e.r.c.OpenAIController - Stored global conversation with printrails: [PT3696, PT3752, PT3231, PT3819, PT1943, PT3599, PT3612, PT3205, PT3640, PT3609, PT3625]
+
+2026-02-25T16:33:35.0121135Z 11:33:35.011 [http-nio-8080-exec-5] INFO  c.u.c.e.r.c.OpenAIController - ==========================================================
